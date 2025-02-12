@@ -4,10 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
-    <title>Infinite Runner Game</title>
+    <title>Kay Runner | Infinite Runner Game</title>
 </head>
 <body>
     <div class="game-board">
+        <div class="gameover-box">
+            <h1 class="gameover-title">Game Over</h1>
+            <button onclick="restart()" class="restartBtn"><p>Restart</p></button>
+        </div>
+        <div class="score">
+            <h2 class="score-points">0</h2>
+            <h2 class="score-high">0</h2>
+        </div>
+        <img src="./images/clouds.png" class="clouds">
         <img src="./images/character.gif" class="character">
         <img src="./images/boxA.png" class="boxA">  
     </div>

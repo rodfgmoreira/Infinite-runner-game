@@ -1,23 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
 }
 
 .game-board {
     width: 80%;
     height: 500px;
     border: 1px solid #000;
+    border-bottom: 15px solid rgb(35, 165, 30);
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+    background: linear-gradient(#87CEEB, #E0F6FF);
 }
 
 .boxA {
     position: absolute;
     bottom: 0;
     width: 80px;
-    animation: boxA-animation 2s infinite linear;
+    animation: boxA-animation 1.5s infinite linear;
 }
 
 .character {
@@ -26,8 +32,100 @@
     width: 150px;
 }
 
+.clouds {
+    width: 550px;
+    bottom: 200px;
+    position: absolute;
+    animation: clouds-animation 20s infinite linear;
+}
+
 .jump { 
     animation: jump 525ms ease-out;
+}
+
+.gameover-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.gameover-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 180px;
+    font-size: 60px;
+    opacity: 0;
+    z-index: 1;
+}
+
+/* Score and HighScore */
+
+.score {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 1;
+}
+
+.score-points {
+    background-color: #ffae00;
+    border: #000 solid 1px;
+    border-radius: 16px;
+    padding: 4px;
+    width: 128px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.score-high {
+    background-color: #ffae00;
+    border: #000 solid 1px;
+    border-radius: 16px;
+    padding: 4px;
+    width: 128px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+
+/* Restart button */
+
+.restartBtn {
+    border: none;
+    border-radius: 32px;
+    width: 140px;
+    height: 50px;
+    color: #000;
+    z-index: 1;
+    display: flex;
+    background: #ffae00;
+    position: relative;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.restartBtn p {
+    margin: 0 auto;
+    align-self: center;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.restartBtn:hover {
+    background: #3b3b3b;
+    transition: .2s;
+    color: #fff;
 }
 
 /* Animations */
@@ -48,18 +146,28 @@
     }
 
     40% {
-        bottom: 180px;
-    }
-
-    50% {
         bottom: 190px;
     }
 
+    50% {
+        bottom: 200px;
+    }
+
     60% {
-        bottom: 180px;
+        bottom: 190px;
     }
 
     0% {
         bottom: 0;
+    }
+}
+
+@keyframes clouds-animation {
+    from {
+        right: -550px;
+    }
+
+    to {
+        right: 100%;
     }
 }
