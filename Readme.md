@@ -3,7 +3,7 @@
 ## Changelogs
 
 ### v0.1.0 - (12/02/2025)
-- First playable version 
+- First playable version.
 
 ### v0.1.1 - (13/02/2025)
 - Score Counting: Added a loop that increases the score every 100ms while the game is running.
